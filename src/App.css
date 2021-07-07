@@ -1,4 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 .App {
+  font-family: 'Special Elite', cursive;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
