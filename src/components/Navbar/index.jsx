@@ -2,19 +2,28 @@ import React from 'react'
 import styled from '@emotion/styled'
 import * as palette from '../colors'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 const Nav = styled.div`
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  width: 600px;
+  // display: table-cell;
+  // vertical-align: middle;
+  // text-align: center;
+  // width: 600px;
+  display: flex;
+  margin-bottom: 3rem;
 `
 
 const Li = styled.li`
   display: inline-block;
-  margin: 1rem;
+  margin-right: 3rem;
 `
 
-const Link = styled.span`
+const LinkSpan = styled.span`
   position: relative;
   display: block;
   cursor: pointer;  
@@ -49,23 +58,36 @@ const Link = styled.span`
   }
 `
 
+const links = [
+  'Home',
+  'About',
+  'Projects',
+  'Contact'
+]
+
 const Navbar = () => {
   return (
-    <Nav>
-      <ul>
-        <Li>
-          <Link>Home</Link>
-        </Li>
-        <Li>
-          <Link>About</Link>
+    <Router>
+      <Nav>
+        <ul>
 
-        </Li>
-        <Li>
+          {links.map((link, index) => {
+            return (
+              <Li key={index}>
+                <Link 
+                  to={`/${link}`} 
+                  style={{ 
+                    textDecoration: 'none', color: 'black'
+                  }}
+                ><LinkSpan>{link}</LinkSpan>
+                </Link>
+              </Li>
+            )
+          })}
 
-          <Link>Contact</Link>
-        </Li>
-      </ul>
-    </Nav>
+        </ul>
+      </Nav>
+    </Router>
   )
 }
 
