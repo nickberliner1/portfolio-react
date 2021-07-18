@@ -26,6 +26,8 @@ const ListItem = styled.li`
   margin-bottom: 1rem;
   &:hover {
     cursor: pointer;
+    text-decoration: line-through;
+    text-decoration-thickness: .1rem;
   }
 `
 
@@ -40,7 +42,7 @@ const description = [
 const Hero = () => {
   return (
     <Header>
-      <Navbar />
+      {/* <Navbar /> */}
       <Title>Nick Berliner:</Title>
       <List>
       {description.map((item, index) => {
