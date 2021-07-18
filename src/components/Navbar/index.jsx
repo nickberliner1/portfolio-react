@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import * as palette from '../colors'
+import About from '../../About';
 
 import {
   BrowserRouter as Router,
@@ -59,10 +60,10 @@ const LinkSpan = styled.span`
 `
 
 const links = [
-  'Home',
-  'About',
-  'Projects',
-  'Contact'
+  'home',
+  'about',
+  'projects',
+  'contact'
 ]
 
 const Navbar = () => {
@@ -75,7 +76,7 @@ const Navbar = () => {
             return (
               <Li key={index}>
                 <Link 
-                  to={`/${link}`} 
+                  to={`/${link === 'home' ? '' : link}`} 
                   style={{ 
                     textDecoration: 'none', color: 'black'
                   }}
